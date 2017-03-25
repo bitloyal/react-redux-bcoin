@@ -6,51 +6,38 @@ export default class LogIn extends Component {
   	
   	constructor(props){
   		super(props); 
-  		this.handleSubmit = this.handleSubmit.bind(this); 
-      this.logout = this.logout.bind(this);
-      this.checkHeadings = this.checkHeadings.bind(this);
-      this.checkLogin = this.checkLogin.bind(this);
-      this.state = {loggedIn : this.props.loggedIn, logMessage: '', username: this.props.username, message: null}
+  	    this.handleSubmit = this.handleSubmit.bind(this); 
+        this.logout = this.logout.bind(this);
+        this.checkLogin = this.checkLogin.bind(this);
+        this.state = {loggedIn : this.props.loggedIn, logMessage: '', username: this.props.username, message: null}
   	}
 
   	handleSubmit(e){
   		e.preventDefault(); 
 
-      var username = document.getElementsByName('username')[0];
-      var password = document.getElementsByName('password')[0];
-      var thisLogin = login.bind(this); 
+        var username = document.getElementsByName('username')[0];
+        var password = document.getElementsByName('password')[0];
+        var thisLogin = login.bind(this); 
 
-      thisLogin(username.value,password.value); 
-
+        thisLogin(username.value,password.value); 
   		username.value = ""; 
   		password.value = ""; 
   	}
 
     logout(){
-      var thisLogout = logout.bind(this); 
-      thisLogout();
-      this.props.clearState(); 
-
-    }
-
-    checkHeadings(){
-      var path = location.pathname; 
-      if(path !== '/'){
-        var route = path.slice(path.indexOf('/') + 1);
-        document.getElementsByClassName("selected")[0].className = ""; 
-        document.getElementsByName(route)[0].className = "selected";
-      }
+        var thisLogout = logout.bind(this); 
+        thisLogout();
+        this.props.clearState(); 
     }
 
     checkLogin(){
-      if(this.props.loggedIn !== false){
-        var login = document.getElementsByName('login')[0].className +=  "login";
-        var signup = document.getElementsByName('signup')[0].className += "login";
-      }
+        if(this.props.loggedIn !== false){
+          var login = document.getElementsByName('login')[0].className +=  "login";
+          var signup = document.getElementsByName('signup')[0].className += "login";
+        }
     }
 
   	render() {
-
       if(!this.props.loggedIn){
         return (  
         <div className="form-container">
@@ -74,16 +61,5 @@ export default class LogIn extends Component {
 
         )
       }
-  }
-  componentDidMount(){
-    this.checkHeadings();
-  }
-  componentDidUpdate(){
-    if(this.state.message){
-      if(document.getElementsByClassName('flag').length > 0){
-        document.getElementsByClassName('flag')[0].style.display =  "block";
-        document.getElementsByClassName('flag')[0].style.color = 'red';  
-      }
-    }
   }
 }

@@ -77,8 +77,10 @@ app.post('/signup', function(req, res){
 
 app.post('/login', function(req, res){
 	var user = req.body;
+  console.log("login user ", user); 
 	db.User.authenticate(user.username, user.password, function(err, user){
     if(user){
+      console.log("valid user")
       req.login(user);
       res.send(user);  
     }else{

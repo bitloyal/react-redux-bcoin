@@ -57,7 +57,7 @@ export function login(username, password){
             message: "password is incorrect"
         });
         }else{
-          this.props.successLog(response.data._id, username);
+          
           this.setState({
           loggedIn: true,
           message: "Successfully Logged In!"
@@ -103,4 +103,4 @@ export function logout(){
         })
     })
 }
-
+  
