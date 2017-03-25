@@ -16,17 +16,12 @@ export function resData(products) {
   }
 }
 
-
 export function fetchData(store){
-	console.log("fetch called")
-
 		return axios({
 	      method: 'get',
 	      url: '/products'
 	    }).then((response) => {
-	    		console.log("response")
-			      store.dispatch(resData(response.data));
-	      
+			store.dispatch(resData(response.data));  
 
 	    }).catch((error)=>{
 	      store.dispatch(resData([]));
