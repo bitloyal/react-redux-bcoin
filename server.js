@@ -34,7 +34,7 @@ app.use("/", function (req, res, next) {
       function (err, user) {
         req.user = user;
         cb(null, user);
-      })
+      });
   };
 
   req.logout = function () {
@@ -97,7 +97,7 @@ app.get('/products', function(req, res){
 		}else{
 			res.send([]);
 		}
-	})
+	});
 		
 });
 
@@ -115,4 +115,4 @@ app.listen(process.env.PORT || 3000, function(err) {
     return console.error(err);
   }
   console.log('Listening at http://localhost:3000/');
-})
+});
