@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 export default class App extends Component {
   	render() {
-    return (	
-        <div>
-      		<div><Link to="/login">Login</Link></div>
-      		<div><Link to="/signup">Signup</Link></div>
-      		<div><Link to="/products">products</Link></div>
-      	 </div>
-    );
-  }
+    	return (	
+        	<div>
+      			<div><Link to="/login">Login</Link></div>
+      			<div><Link to="/signup">Signup</Link></div>
+      			<div><Link to="/questions">Questions</Link></div>
+      		</div>
+		);
+	}
 }
 

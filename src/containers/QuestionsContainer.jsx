@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { reqData } from '../actions'
-import Products from '../components/Products.jsx'
+import Questions from '../components/Questions.jsx'
 
 const mapStateToProps = (state, ownProps) => ({
 	state 
@@ -12,9 +12,9 @@ const mapStateToProps = (state, ownProps) => ({
 //   }
 // });
 
-const ProductContainer = connect(
-  mapStateToProps,
-  null
-)(Products)
+const QuestionsContainer = connect(
+	mapStateToProps,
+	null
+)(Questions)
 
-export default ProductContainer
+export default QuestionsContainer

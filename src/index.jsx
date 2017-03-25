@@ -14,9 +14,9 @@ import App from 'App';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Wrapper from './components/Wrapper';
-import Products from './components/Products';
+import Questions from './components/Questions';
 
-import ProductContainer from './containers/ProductContainer.jsx';
+import QuestionsContainer from './containers/QuestionsContainer.jsx';
 
 // Create the store 
 const store = createStore(
@@ -36,7 +36,7 @@ ReactDOM.render((
 				<IndexRoute pageId="index" component={App}/>
 				<Route path="/login" pageId="Login" component={Login}/>
 				<Route path="/signup" pageId="Signup" component={SignUp}/>
-				<Route path="/products" pageId="Products" component={ProductContainer}/>
+				<Route path="/questions" pageId="Questions" component={QuestionsContainer}/>
 			</Route>
 		</Router>
 	</Provider>), document.getElementById('root'));
