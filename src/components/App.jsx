@@ -6,6 +6,7 @@ export default class App extends Component {
     return (	
         <div>
       		<div><Link to="/login">Login</Link></div>
+      		<div><Link to="/signup">Signup</Link></div>
       		<div><Link to="/products">products</Link></div>
       	 </div>
     );
