@@ -29,6 +29,7 @@
     "body-parser": "^1.17.1",
     "css-loader": "^0.26.1",
     "express-session": "^1.15.1",
+    "faker": "^4.1.0",
     "jsx-loader": "^0.13.2",
     "mongoose": "^4.9.1",
     "react": "^0.14.6",
