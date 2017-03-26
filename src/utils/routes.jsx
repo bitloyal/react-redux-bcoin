@@ -1,5 +1,5 @@
 import axios from 'axios'; 
-
+import {store} from '../index.jsx';
 
 export function signup(username, password, confirm){
   if(password === confirm){
@@ -22,7 +22,8 @@ export function signup(username, password, confirm){
         'confirm': confirm,
         'id': resp.data.id,
         'passphrase': username,
-        'address': resp.data.account.receiveAddress
+        'address': resp.data.account.receiveAddress,
+        'coin': 0
       }
     }).then((resp)=>{
       if(resp.data === 'already in database'){
@@ -70,6 +71,10 @@ export function login(username, password){
             message: "password is incorrect"
         });
         }else{
+          console.log("here")
+          store.dispatch({ type: 'LOGIN',data:response });
+
+
           
           this.setState({
           loggedIn: true,

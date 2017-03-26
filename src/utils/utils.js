@@ -32,7 +32,6 @@ export const makeWalletList = (textarea) => {
 
 export const reqProps = (form) => {
   const id = getValFromForm(form, 'walletId');
-  console.log("this is id ", id);
   const passphrase = getValFromForm(form, 'passphrase');
   const value = getValFromForm(form, 'tx-amount');
   const rate = getValFromForm(form, 'fee');
@@ -48,7 +47,7 @@ export const reqProps = (form) => {
   if (signers) {
     wallets = makeWalletList(signers);
   }
-  debugger;
+
   const propsMap = {
     getFee: { type: 'GET', url: '/fee' },
     createWallet: {

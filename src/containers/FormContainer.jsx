@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import FormInput from '../components/FormInput';
 import { reqProps, checkInputs } from '../utils/utils';
 import axios from 'axios'; 
-import { ajax } from 'jquery';
 
 class FormContainer extends Component {
   constructor(props) {
@@ -31,8 +30,7 @@ class FormContainer extends Component {
       method: type,
       url: url,
       data: data
-    }).then((response)=>{
-      debugger; 
+    }).then((response)=>{ 
         _this.setState({
           serverMessage: response
         });
