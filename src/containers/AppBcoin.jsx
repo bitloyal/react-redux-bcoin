@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
-
 import FormContainer from './FormContainer';
 import forms from '../forms.json';
-import NavBar from '../components/NavBar';
 
 const makeFormItems = formProps => (
   <FormContainer
@@ -14,18 +12,14 @@ const makeFormItems = formProps => (
   />
 );
 
-
-
-
-
-const App = () => (
+const AppBcoin = () => (
   <div className="container bcoin" role="main">
     { forms.map(makeFormItems) }
   </div>
 );
 
-App.propTypes = {
+AppBcoin.propTypes = {
   children: PropTypes.node,
 };
 
-export default App;
+export default AppBcoin;

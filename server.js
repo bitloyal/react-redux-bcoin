@@ -65,7 +65,7 @@ app.post('/signup', function(req, res){
 	var info = req.body; 
 	db.User.find({username: info.username}, function(err,user){
 		if(user.length === 0){
-			db.User.createSecure(info.username, info.password, function(err, user){
+			db.User.createSecure(info.username, info.password, info.id, info.passphrase, info.address, function(err, user){
         if(user){
           res.send(user);
         }else{
