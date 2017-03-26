@@ -22,9 +22,7 @@ import AnswerContainer from './containers/AnswerContainer.jsx';
 
 
 const initialState = {
-	login: false,
-	username: "",
-	btc: 0
+	login: false
 }
 	
 // Create the store 

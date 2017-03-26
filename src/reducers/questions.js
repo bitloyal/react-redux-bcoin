@@ -59,29 +59,20 @@ const initialState = {
 };
 
 const questions = (state = initialState, action) => {
-	let avotes = parseInt(state.avotes);
-
-	console.log('avotes:');
-	console.log(avotes);
+	var avotes = parseInt(state.avotes);
 
 	switch (action.type) {
 		case 'CLICK_UP':
 			avotes++;
-			console.log('clicked up');
-			console.log('state:');
-			console.log(state);
 			return Object.assign({}, state, {
-				state: {avotes},
+				avotes,
 				questions: state.questions
 			});
 		case 'CLICK_DOWN':
 			avotes--;
-			console.log('clicked down');
-			console.log('state:');
-			console.log(state);
-			console.log(state);
+			
 			return Object.assign({}, state, {
-				state: {avotes},
+				avotes,
 				questions: state.questions
 			});
 		default:
