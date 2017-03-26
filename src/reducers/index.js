@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux'
-import todos from './todos'
-import products from './handleData'
-import {routerReducer } from 'react-router-redux';	
+import { combineReducers } from 'redux';
+import questions from './questions';
+import products from './handleData';
+import { routerReducer } from 'react-router-redux';	
 
 const storeApp = combineReducers({
-  todos,
-  products,
-  routing: routerReducer
-})
+	questions,
+	products,
+	routing: routerReducer
+});
 
-export default storeApp
+export default storeApp;
