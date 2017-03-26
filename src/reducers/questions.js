@@ -4,7 +4,7 @@ const initialState = {
 	questions: [
 		{
 			summary: "Can somebody help me to refactor my app into Redux?",
-			date: `${Faker.date.past()}`,
+			date: Faker.date.past(),
 			tags: [
 				"react",
 				"redux"
@@ -16,7 +16,7 @@ const initialState = {
 		},
 		{
 			summary: "Need an IoT dev who knows Squirrel",
-			date: `${Faker.date.past()}`,
+			date: Faker.date.past(),
 			tags: [
 				"squirrel",
 				"iot"
@@ -28,7 +28,7 @@ const initialState = {
 		},
 		{
 			summary: "Can't get my AWS Lambda to work",
-			date: `${Faker.date.past()}`,
+			date: Faker.date.past(),
 			tags: [
 				"aws",
 				"serverless"
@@ -40,7 +40,7 @@ const initialState = {
 		},
 		{
 			summary: "Heroku deployment stopped working",
-			date: `${Faker.date.past()}`,
+			date: Faker.date.past(),
 			tags: [
 				"heroku",
 				"node",

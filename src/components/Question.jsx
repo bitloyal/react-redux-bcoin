@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
+import '../css/home.css';
+import ago from 's-ago';
 
 export default class Question extends Component {
   	render() {
     	return (	
-        	<div>
-        		<Counter label="votes">{this.props.votes}</Counter>
-        		<Counter label="answers">{this.props.answers}</Counter>
-        		<Counter label="views">{this.props.views}</Counter>
-        		<div className="summary">{this.props.summary}</div>
+        	<div className="question">
+        		<div className="counters">
+	        		<Counter label="votes">{this.props.votes}</Counter>
+	        		<Counter label="answers">{this.props.answers}</Counter>
+	        		<Counter label="views">{this.props.views}</Counter>
+        		</div>
 
-        		{this.props.tags.map((tag, i) => 
-        			<div className="tag" key={i}>{tag}</div>
-        		)}
+        		<div className="info">
+	        		<div className="summary">{this.props.summary}</div>
 
-        		<div className="date">{this.props.date}</div>
-        		<div className="name">{this.props.name}</div>
+	        		{this.props.tags.map((tag, i) => 
+	        			<div className="tag" key={i}>{tag}</div>
+	        		)}
+
+	        		<div className="date">{ago(this.props.date)}</div>
+	        		<div className="name">{this.props.name}</div>
+        		</div>
       		</div>
     	);
 	}
