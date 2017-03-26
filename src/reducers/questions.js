@@ -1,7 +1,7 @@
 import Faker from "faker";
 
 const initialState = {
-	avotes: 1,
+	avotes: 0,
 	questions: [
 		{
 			summary: "How to refactor this Redux connect code?",
@@ -59,31 +59,19 @@ const initialState = {
 };
 
 const questions = (state = initialState, action) => {
-	let avotes = parseInt(state.avotes);
-
-	console.log('avotes:');
-	console.log(avotes);
+	var avotes = parseInt(state.avotes);
 
 	switch (action.type) {
 		case 'CLICK_UP':
 			avotes++;
-			console.log('clicked up');
-			console.log('state:');
-			console.log(state);
 			return Object.assign({}, state, {
-				state: {
-					avotes,
-					questions: state.questions
-				}
+				avotes,
+				questions: state.questions
 			});
 		case 'CLICK_DOWN':
 			avotes--;
-			console.log('clicked down');
-			console.log('state:');
-			console.log(state);
-			console.log(state);
+			
 			return Object.assign({}, state, {
-				state: {
 					avotes,
 					questions: state.questions
 				}
