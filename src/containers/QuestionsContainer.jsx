@@ -1,20 +1,24 @@
-import { connect } from 'react-redux'
-import { reqData } from '../actions'
-import Questions from '../components/Questions.jsx'
+import { connect } from 'react-redux';
+import { reqData } from '../actions';
+import Questions from '../components/Questions.jsx';
 
-const mapStateToProps = (state, ownProps) => ({
-	state 
-});
+const mapStateToProps = (state, ownProps) => {
+	return {
+		questions: state.questions		
+	}
+};
 
-// const mapDispatchToProps = (dispatch, ownProps) => ({
-//   onClick: () => {
-//     dispatch(setVisibilityFilter(ownProps.filter))
-//   }
-// });
+const mapDispatchToProps = (dispatch, ownProps) => {
+	return {
+		onClick: () => {
+			dispatch(setVisibilityFilter(ownProps.filter))
+		}
+	}
+};
 
 const QuestionsContainer = connect(
 	mapStateToProps,
-	null
-)(Questions)
+	mapDispatchToProps
+)(Questions);
 
-export default QuestionsContainer
+export default QuestionsContainer;

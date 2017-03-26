@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, IndexRoute, Route, browserHistory} from 'react-router';
-import {fetchData} from './actions'; 
+import { Router, IndexRoute, Route, browserHistory } from 'react-router';
+import { fetchData } from './actions'; 
 
 //Redux 
 import { createStore, combineReducers } from 'redux';
@@ -20,8 +20,8 @@ import QuestionsContainer from './containers/QuestionsContainer.jsx';
 
 // Create the store 
 const store = createStore(
-  reducers, 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+	reducers, 
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 // stuff from bcoin implementation 
@@ -33,7 +33,7 @@ fetchData(store);
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
-	 <Provider store={store}>
+	<Provider store={store}>
 		<Router history={history}>
 			<Route path="/" pageId="wrapper" component={Wrapper}>
 				<IndexRoute pageId="index" component={App}/>
