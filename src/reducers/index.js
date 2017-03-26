@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import questions from './questions';
-import products from './handleData';
+import answers from './answers';
 import { routerReducer } from 'react-router-redux';	
 
 const storeApp = combineReducers({
 	questions,
-	products,
+	answers,
 	routing: routerReducer
 });
 
