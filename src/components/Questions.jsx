@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Question from './Question';
+import '../css/home.css';
 
 export default class Questions extends Component {
   	render() {
     	return (
-        	<div>
+        	<div className="questions">
         		{this.props.questions.questions.map((q, i) => 
         			<Question
         				key={i}
