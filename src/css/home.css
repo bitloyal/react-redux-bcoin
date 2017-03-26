@@ -14,6 +14,12 @@
 	box-shadow: 0 1px 0 rgba(12,13,14,0.15);
 }
 
+.link {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -21,11 +27,12 @@
 
 .counters {
 	display: inline-block;
-	padding-right: 20px;
+	width: 23%;
 }
 
 .info {
 	display: inline-block;
+	width: 77%;
 }
 
 .counts {
@@ -78,21 +85,20 @@
 }
 
 .date {
-	display: inline-block;
 	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
 	white-space: nowrap;
-	text-align: left;
 	color: #9199a1;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	text-decoration: none;
 	font-size: 12px;
-	padding-right: 5px;
+	float: right;
+	position: relative;
+	top: 8px;
 }
 
 .name {
-	display: inline-block;
 	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
 	font-size: 12px;
 	color: #07C;
@@ -100,6 +106,10 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
+	float: right;
+	position: relative;
+	top: 8px;
+	margin-right: 10px;
 }
 
 .question {
@@ -109,6 +119,7 @@
 }
 
 .questions {
+	border-top: 1px solid #e4e6e8;
 	height: 275px;
 	width: 728px;
 	position: absolute;
