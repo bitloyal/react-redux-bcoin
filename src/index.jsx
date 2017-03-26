@@ -27,8 +27,6 @@ const store = createStore(
 // stuff from bcoin implementation 
 import AppBcoin from './containers/AppBcoin';
 
-fetchData(store); 
-
 // Sync History and Store 
 const history = syncHistoryWithStore(browserHistory, store);
 

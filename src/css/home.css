@@ -39,8 +39,11 @@
 	text-align: center;
 }
 
-.num {
+.num, .label, .summary, .tag, .date, .name{
 	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
+}
+
+.num {
 	font-size: 17px;
 	font-weight: 300;
 	color: #6a737c;
@@ -49,7 +52,6 @@
 }
 
 .label {
-	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
 	font-size: 11px;
 	color: #848d95;
 	text-align: center;
@@ -57,7 +59,6 @@
 }
 
 .summary {
-	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
 	color: #07C;
 	text-decoration: none;
 	font-size: 16px;
@@ -66,7 +67,6 @@
 
 .tag {
 	border: 0;
-	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
 	text-decoration: none;
 	color: #33658a;
 	background-color: #cee0ed;
@@ -85,7 +85,7 @@
 }
 
 .date {
-	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
+	display: inline-block;
 	white-space: nowrap;
 	color: #9199a1;
 	margin: 0;
@@ -99,7 +99,7 @@
 }
 
 .name {
-	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
+	display: inline-block;
 	font-size: 12px;
 	color: #07C;
 	text-decoration: none;
