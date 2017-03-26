@@ -8,6 +8,7 @@ var favicon = require('serve-favicon');
 var db = require('./models');
 var app = express();
 var compiler = webpack(config);
+var nodeRouter = require('./server/nodeRouter.js');
 
 //create session 
 
@@ -16,6 +17,8 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true
 }));
+
+app.use('/node', nodeRouter);
 
 // create idea of logged in user 
 app.use("/", function (req, res, next) {
@@ -34,7 +37,7 @@ app.use("/", function (req, res, next) {
       function (err, user) {
         req.user = user;
         cb(null, user);
-      })
+      });
   };
 
   req.logout = function () {
@@ -97,7 +100,7 @@ app.get('/products', function(req, res){
 		}else{
 			res.send([]);
 		}
-	})
+	});
 		
 });
 
@@ -115,4 +118,4 @@ app.listen(process.env.PORT || 3000, function(err) {
     return console.error(err);
   }
   console.log('Listening at http://localhost:3000/');
-})
+});

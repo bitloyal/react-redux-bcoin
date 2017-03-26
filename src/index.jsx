@@ -24,6 +24,9 @@ const store = createStore(
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+// stuff from bcoin implementation 
+import AppBcoin from './containers/AppBcoin';
+
 fetchData(store); 
 
 // Sync History and Store 
@@ -36,6 +39,7 @@ ReactDOM.render((
 				<IndexRoute pageId="index" component={App}/>
 				<Route path="/login" pageId="Login" component={Login}/>
 				<Route path="/signup" pageId="Signup" component={SignUp}/>
+				<Route path="/bcoin" pageId="Bcoin" component={AppBcoin}/>
 				<Route path="/questions" pageId="Questions" component={QuestionsContainer}/>
 			</Route>
 		</Router>
