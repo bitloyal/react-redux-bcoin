@@ -28,16 +28,15 @@ export default class SignUp extends Component {
   	render() {
 
     return (	
-        <div className="form-container">
+        <div className="form-container-signup">
         <div className="form-title"> Sign Up Here! </div>
         	<form onSubmit={this.handleSubmit}>
-	        	<input type="text" placeholder="username" name="username" />
-	        	<input type="password" placeholder="password" name="password" />
-            <input type="password" placeholder="confirm password" name="confirm" />
-	        	<input type="submit" placeholder="submit"/>
+	        	<input className="input" type="text" placeholder="username" name="username" />
+	        	<input className="input" type="password" placeholder="password" name="password" />
+            <input className="input" type="password" placeholder="confirm password" name="confirm" />
+	        	<input className="submit" type="submit" placeholder="submit"/>
         	</form>
             <div className="flag">{this.state.message}</div>
-            <div><Link to="/">home</Link></div>
       	 </div>
     );
   }

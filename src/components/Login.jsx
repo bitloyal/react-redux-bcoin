@@ -40,23 +40,21 @@ export default class LogIn extends Component {
   	render() {
       if(!this.props.loggedIn){
         return (  
-        <div className="form-container">
-        <div className="form-title"> Log In </div>
+        <div className="form-container-login">
+        <div className="form-title">Log In</div>
           <form onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="username" name="username" />
-            <input type="password" placeholder="password" name="password" />
-            <input type="submit" placeholder="submit"/>
+            <input className="input" type="text" placeholder="username" name="username" />
+            <input className="input" type="password" placeholder="password" name="password" />
+            <input className="submit" type="submit" placeholder="submit"/>
           </form>
           <div className="flag">{this.state.message}</div>
-          <div><Link to="/">home</Link></div>
          </div>
     );    
       }else{
         return (
-          <div > 
+          <div> 
             <h3> Hello {this.props.username}! Login Successful!</h3>
             <button onClick={this.logout}> Click Here to log out </button>
-            <div><Link to="/">home</Link></div>
           </div>
 
         )
