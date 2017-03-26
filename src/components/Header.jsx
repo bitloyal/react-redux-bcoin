@@ -40,7 +40,14 @@ class Head extends Component {
       			<div className="link"><Link to="/signup">Signup</Link></div>
       			<div className="link"><Link to="/questions">Questions</Link></div>
       			<div className="link"><Link to="/bcoin">BCoin</Link></div>
-            <div className="btc-wrapper"><div id="btc-count btc">{this.processCoins(this.props.state.login.coin)}</div><div className="img-wrapper"><img className="btc-img btc" src={bitcoin} /></div></div>
+            <div className="btc-wrapper">
+              <div className="btc-count">
+                {(this.processCoins(this.props.state.login.coin) || 0).toFixed(2)}
+              </div>
+              <div className="img-wrapper">
+                <img className="btc-img" src={bitcoin} />
+              </div>
+            </div>
       		</div>
       	);
 	 }

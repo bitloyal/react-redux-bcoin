@@ -7,7 +7,8 @@ var userSchema = new mongoose.Schema({
   passphrase: String,
   address: String,
   username: String,
-  passwordDigest: String
+  passwordDigest: String,
+  coin: Number
 });
 
 userSchema.methods.checkPassword = function(password) {
