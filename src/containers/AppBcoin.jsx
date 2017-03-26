@@ -14,19 +14,16 @@ const makeFormItems = formProps => (
   />
 );
 
-
-
-
-
-const App = () => (
+const AppBcoin = () => (
   <div className="container bcoin" role="main">
+
   	<NavBar appName="NOT Bcoin Boilerplate" />
     { forms.map(makeFormItems) }
   </div>
 );
 
-App.propTypes = {
+AppBcoin.propTypes = {
   children: PropTypes.node,
 };
 
-export default App;
+export default AppBcoin;
