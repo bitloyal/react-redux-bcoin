@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import axios from 'axios';
 import FormInput from '../components/FormInput';
 import { reqProps, checkInputs } from '../utils/utils';
+import axios from 'axios'; 
+import { ajax } from 'jquery';
 
 class FormContainer extends Component {
   constructor(props) {
@@ -23,13 +24,15 @@ class FormContainer extends Component {
     let { type, url, data } = reqProps(this.form)[actionName];
     url = this.nodeEndpoint.concat(url);
     data = data ? data : {};
+
     var _this = this; 
-    console.log("what is this.form ", this.form);
+
     axios({
       method: type,
       url: url,
       data: data
     }).then((response)=>{
+      debugger; 
         _this.setState({
           serverMessage: response
         });
@@ -37,20 +40,8 @@ class FormContainer extends Component {
 
       console.log("error occured in FormContainer.jsx line 39");
     })
-
-    // ajax({
-    //   type,
-    //   url,
-    //   data,
-    //   processData: false,
-    //   contentType: 'application/json',
-    //   // TODO: clean this up
-    //   // removed beforeSend authorization function that's in default build
-    //   // auth is being done by default on the nodeRouter.
-    // })
-    // .done(response => this.setState({ serverMessage: response }));
   }
-
+    
   render() {
     const {
       title,
@@ -59,7 +50,7 @@ class FormContainer extends Component {
       formInputs,
     } = this.props;
 
-    const composeInput = ({ label, name, type, min, step }) => (
+    const composeInput = ({ label, name, type, min, step, value }) => (
       <FormInput
         label={label}
         name={name}
@@ -67,6 +58,7 @@ class FormContainer extends Component {
         min={min}
         step={step}
         key={name}
+        value={value}
       />
     );
 
