@@ -1,4 +1,4 @@
-.container .bcoin {
+.app-wrapper {
 	padding-top: 60px;
 }
 
@@ -144,7 +144,7 @@
 .form-container-login {
 	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
 	font-size: 17px;
-	height: 75px;
+	height: 175px;
 	width: 150px;
 	position: absolute;
 	top: 0;
