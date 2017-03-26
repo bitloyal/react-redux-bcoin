@@ -72,16 +72,14 @@ export function login(username, password){
         });
         }else{
           console.log("here")
-          store.dispatch({ type: 'LOGIN',data:response });
-
-
-          
+          store.dispatch({ type: 'LOGIN',data:response });      
           this.setState({
           loggedIn: true,
           message: "Successfully Logged In!"
         });
         }
     }).catch((error)=>{
+      debugger;
         this.setState({
           message: "an error occured"
         });
