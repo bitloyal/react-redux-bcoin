@@ -23,7 +23,7 @@ class Head extends Component {
       if(coins){
         return parseFloat(coins).toFixed(2)  
       }else{
-        return null; 
+        return 0; 
       }
       
     }
@@ -42,7 +42,7 @@ class Head extends Component {
       			<div className="link"><Link to="/bcoin">BCoin</Link></div>
             <div className="btc-wrapper">
               <div className="btc-count">
-                {(this.processCoins(this.props.state.login.coin) || 0).toFixed(2)}
+                {(this.processCoins(this.props.state.login.coin)).toFixed(2)}
               </div>
               <div className="img-wrapper">
                 <img className="btc-img" src={bitcoin} />
