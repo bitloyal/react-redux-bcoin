@@ -1,17 +1,6 @@
 const initialState = {
 	answers: [
-		{
 
-		},
-		{
-
-		},
-		{
-
-		},
-		{
-			
-		}
 	]
 };
 

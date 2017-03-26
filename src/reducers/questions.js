@@ -3,15 +3,18 @@ import Faker from "faker";
 const initialState = {
 	questions: [
 		{
-			summary: "Can somebody help me to refactor my app into Redux?",
+			summary: "How to refactor this Redux connect code?",
 			date: Faker.date.past(),
 			tags: [
-				"react",
-				"redux"
+				"javascript",
+				"reactjs",
+				"ecmascript-6",
+				"redux",
+				"ecmascript-5"
 			],
-			name: `${Faker.name.findName()}`,
-			votes: 1,
-			answers: 3,
+			name: `John Doe`,
+			votes: 2,
+			answers: 1,
 			views: 10
 		},
 		{
