@@ -1,7 +1,7 @@
 import Faker from "faker";
 
 const initialState = {
-	avotes: 1,
+	avotes: 0,
 	questions: [
 		{
 			summary: "How to refactor this Redux connect code?",
@@ -72,8 +72,9 @@ const questions = (state = initialState, action) => {
 			avotes--;
 			
 			return Object.assign({}, state, {
-				avotes,
-				questions: state.questions
+					avotes,
+					questions: state.questions
+				}
 			});
 		default:
 			return state;
