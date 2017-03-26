@@ -4,10 +4,7 @@ import Question from './Question';
 
 export default class Questions extends Component {
   	render() {
-		console.log('this.props.questions.questions:');
-		console.log(this.props.questions.questions);
     	return (
-
         	<div>
         		{this.props.questions.questions.map((q, i) => 
         			<Question
