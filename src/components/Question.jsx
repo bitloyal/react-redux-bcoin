@@ -15,7 +15,7 @@ export default class Question extends Component {
         		</div>
 
         		<div className="info">
-	        		<div className="summary">{this.props.summary}</div>
+	        		<Link to="/answer" style={{ textDecoration: 'none' }}><div className="summary">{this.props.summary}</div></Link>
 
 	        		{this.props.tags.map((tag, i) => 
 	        			<div className="tag" key={i}>{tag}</div>

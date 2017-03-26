@@ -49,7 +49,14 @@ module.exports = {
                 regenerator: true
               }]},
     { test: /\.css$/, loader: "style-loader!css-loader" },
-    { test: /\.json$/, loader: 'json-loader' }
+    { test: /\.json$/, loader: 'json-loader' },
+    {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+    }
   ]
   },
   resolve: {
