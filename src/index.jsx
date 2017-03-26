@@ -20,9 +20,17 @@ import Answer from './components/Answer';
 import QuestionsContainer from './containers/QuestionsContainer.jsx';
 import AnswerContainer from './containers/AnswerContainer.jsx';
 
+
+const initialState = {
+	login: false,
+	username: "",
+	btc: 0
+}
+	
 // Create the store 
 const store = createStore(
 	reducers, 
+	initialState,
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
@@ -45,4 +53,6 @@ ReactDOM.render((
 			</Route>
 		</Router>
 	</Provider>), document.getElementById('root'));
+
+export {store}; 
 	

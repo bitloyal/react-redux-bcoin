@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import {login, logout} from '../utils/routes.jsx'; 
 import {Link} from 'react-router';
+import {connect} from 'react-redux';
 
-export default class LogIn extends Component {
+const mapStateToProps = (state) => {
+  return {
+    state
+  };
+}; 
+
+class Log extends Component {
   	
   	constructor(props){
   		super(props); 
@@ -10,16 +17,18 @@ export default class LogIn extends Component {
         this.logout = this.logout.bind(this);
         this.checkLogin = this.checkLogin.bind(this);
         this.state = {loggedIn : this.props.loggedIn, logMessage: '', username: this.props.username, message: null}
+
   	}
 
   	handleSubmit(e){
   		e.preventDefault(); 
 
-        var username = document.getElementsByName('username')[0];
-        var password = document.getElementsByName('password')[0];
-        var thisLogin = login.bind(this); 
-
-        thisLogin(username.value,password.value); 
+      var username = document.getElementsByName('username')[0];
+      var password = document.getElementsByName('password')[0];
+      var thisLogin = login.bind(this); 
+      
+      thisLogin(username.value,password.value); 
+        
   		username.value = ""; 
   		password.value = ""; 
   	}
@@ -31,14 +40,14 @@ export default class LogIn extends Component {
     }
 
     checkLogin(){
-        if(this.props.loggedIn !== false){
+        if(this.props.login !== false){
           var login = document.getElementsByName('login')[0].className +=  "login";
           var signup = document.getElementsByName('signup')[0].className += "login";
         }
     }
 
   	render() {
-      if(!this.props.loggedIn){
+      if(!this.props.state.login){
         return (  
         <div className="form-container-login">
         <div className="form-title">Log In</div>
@@ -61,3 +70,13 @@ export default class LogIn extends Component {
       }
   }
 }
+
+const Login = connect(
+  mapStateToProps,
+  null
+)(Log);
+
+export default Login;
+
+
+

@@ -30,8 +30,7 @@ class FormContainer extends Component {
       method: type,
       url: url,
       data: data
-    }).then((response)=>{
-      debugger; 
+    }).then((response)=>{ 
         _this.setState({
           serverMessage: response
         });

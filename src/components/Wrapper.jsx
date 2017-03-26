@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from "./Header";
-import navBar from "./NavBar";
 
 export default class Wrapper extends Component {
     render() {

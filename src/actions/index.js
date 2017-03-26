@@ -4,6 +4,9 @@ export const REQ_DATA = "REQ_DATA";
 export const RES_DATA = "RES_DATA";
 export const CLICK_UP = "CLICK_UP";
 export const CLICK_DOWN = "CLICK_DOWN";
+export const LOGIN = "LOGIN"; 
+export const LOGOUT = "LOGOUT"; 
+
 
 export function reqData() {
   return {
@@ -17,6 +20,7 @@ export function resData(products) {
     products
   }
 }
+
 
 export function increment(question) {
 	return {
@@ -32,15 +36,9 @@ export function decrement(question) {
 	}
 }
 
-export function fetchData(store){
-		return axios({
-	      method: 'get',
-	      url: '/products'
-	    }).then((response) => {
-			store.dispatch(resData(response.data));  
-
-	    }).catch((error)=>{
-	      store.dispatch(resData([]));
-	    })
-		
+export function login(data) {
+  return {
+    type: LOGIN,
+    data
+  }
 }
