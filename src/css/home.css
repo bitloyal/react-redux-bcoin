@@ -237,3 +237,8 @@ input:-webkit-autofill {
 	line-height: 1;
 	display: inline-block;
 }
+
+.arrow:hover{
+	background: orange;
+}
+

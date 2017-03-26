@@ -9,6 +9,7 @@ export default class Header extends Component {
       			<div className="link"><Link to="/signup">Signup</Link></div>
       			<div className="link"><Link to="/questions">Questions</Link></div>
       			<div className="link"><Link to="/bcoin">BCoin</Link></div>
+            <div className="link"><Link to="/answer">Answer</Link></div>
       		</div>
       	);
 	}

@@ -20,7 +20,7 @@ export function signup(username, password, confirm){
         'username': username,
         'password': password,
         'confirm': confirm,
-        'id': username,
+        'id': resp.data.id,
         'passphrase': username,
         'address': resp.data.account.receiveAddress
       }
