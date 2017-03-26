@@ -1,5 +1,22 @@
 .header {
-	background: orange;
+	background: #fafafb;
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: auto;
+	width: 100%;
+	z-index: 1000;
+	height: 60px;
+	font-size: 13px;
+	line-height: 1.3em;
+	box-sizing: border-box;
+	border-top: 3px solid #F48024;
+	box-shadow: 0 1px 0 rgba(12,13,14,0.15);
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
 }
 
 .counters {
@@ -71,6 +88,7 @@
 	border: 0;
 	text-decoration: none;
 	font-size: 12px;
+	padding-right: 5px;
 }
 
 .name {
@@ -87,6 +105,19 @@
 .question {
 	padding: 12px 0 10px 0;
 	border-bottom: 1px solid #e4e6e8;
+	width: 728px;
+}
+
+.questions {
+	height: 275px;
+	width: 728px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	margin: auto;
 }
 
 .counter {

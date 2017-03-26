@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import Header from "./Header"; 
-import Footer from "./Footer";
+import Header from "./Header";
 
 export default class Wrapper extends Component {
-  render() {
-    return (
-        <div className="app-wrapper">
-	      	<Header/>
-	      		<div className="content">
-	      			{this.props.children}
-	      		</div>
-	      	<Footer/>
-      	</div>
-    );
-  }
+    render() {
+        return (
+            <div className="app-wrapper">
+	      	    <Header/>
+	      	    <div className="content">
+	      		   {this.props.children}
+                </div>
+            </div>
+        );
+    }
 }
