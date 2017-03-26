@@ -5,6 +5,8 @@ import '../css/home.css';
 
 export default class Questions extends Component {
   	render() {
+        console.log(this.props);
+
     	return (
         	<div className="questions">
         		{this.props.questions.questions.map((q, i) => 

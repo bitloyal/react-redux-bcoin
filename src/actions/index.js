@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 export const REQ_DATA = "REQ_DATA";
-export const RES_DATA = "RES_DATA"; 
+export const RES_DATA = "RES_DATA";
+export const CLICK_UP = "CLICK_UP";
+export const CLICK_DOWN = "CLICK_DOWN";
 export const LOGIN = "LOGIN"; 
 export const LOGOUT = "LOGOUT"; 
+
 
 export function reqData() {
   return {
@@ -18,6 +21,20 @@ export function resData(products) {
   }
 }
 
+
+export function increment(question) {
+	return {
+		type: CLICK_UP,
+		question
+	}
+}
+
+export function decrement(question) {
+	return {
+		type: CLICK_DOWN,
+		question
+	}
+}
 
 export function login(data) {
   return {

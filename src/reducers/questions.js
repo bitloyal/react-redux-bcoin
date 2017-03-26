@@ -1,17 +1,21 @@
 import Faker from "faker";
 
 const initialState = {
+	avotes: 1,
 	questions: [
 		{
-			summary: "Can somebody help me to refactor my app into Redux?",
+			summary: "How to refactor this Redux connect code?",
 			date: Faker.date.past(),
 			tags: [
-				"react",
-				"redux"
+				"javascript",
+				"reactjs",
+				"ecmascript-6",
+				"redux",
+				"ecmascript-5"
 			],
-			name: `${Faker.name.findName()}`,
-			votes: 1,
-			answers: 3,
+			name: `John Doe`,
+			votes: 2,
+			answers: 1,
 			views: 10
 		},
 		{
@@ -55,9 +59,31 @@ const initialState = {
 };
 
 const questions = (state = initialState, action) => {
+	let avotes = parseInt(state.avotes);
+
+	console.log('avotes:');
+	console.log(avotes);
+
 	switch (action.type) {
-		case 'CLICK_QUESTION':
-			return state;
+		case 'CLICK_UP':
+			avotes++;
+			console.log('clicked up');
+			console.log('state:');
+			console.log(state);
+			return Object.assign({}, state, {
+				state: {avotes},
+				questions: state.questions
+			});
+		case 'CLICK_DOWN':
+			avotes--;
+			console.log('clicked down');
+			console.log('state:');
+			console.log(state);
+			console.log(state);
+			return Object.assign({}, state, {
+				state: {avotes},
+				questions: state.questions
+			});
 		default:
 			return state;
 	}
