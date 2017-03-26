@@ -1,10 +1,19 @@
-var path = require('path');
 var webpack = require('webpack');
+var path = require('path');
+var fs = require('fs');
+
+// var nodeModules = {};
+// fs.readdirSync('node_modules')
+//   .filter(function(x) {
+//     return ['.bin'].indexOf(x) === -1;
+//   })
+//   .forEach(function(mod) {
+//     nodeModules[mod] = 'commonjs ' + mod;
+//   });
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-hot-middleware/client',
     './src/index', 
     './src/css/home.css'
   ],
@@ -14,17 +23,33 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ContextReplacementPlugin(/bcoin/, ".")
   ],
+  module:{
+     noParse: ['ws']
+  },
+  node: {
+    fs: "empty",
+    dns: 'mock',
+    net: 'mock',
+    tls: "empty"
+  },
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
+      loaders: ['babel'],
       include: path.join(__dirname, 'src')
     },
-    { test: /\.jsx$/, loaders: ["react-hot", "jsx-loader"], include: path.join(__dirname, "src") },
-    {test: /\.jsx?$/, loader: 'babel-loader'},
-    { test: /\.css$/, loader: "style-loader!css-loader" }
+    { test: /\.jsx$/, loaders: [ "jsx-loader"], include: path.join(__dirname, "src") },
+    {test: /\.jsx?$/, loader: 'babel-loader',
+  plugins: ['transform-runtime',{
+                helpers: false,
+                polyfill: false,
+                regenerator: true
+              }]},
+    { test: /\.css$/, loader: "style-loader!css-loader" },
+    { test: /\.json$/, loader: 'json-loader' }
   ]
   },
   resolve: {
@@ -35,4 +60,5 @@ module.exports = {
       Reducers: "src/reducers"
     }
   }
+   //externals: nodeModules
 };

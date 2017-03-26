@@ -8,6 +8,7 @@ var favicon = require('serve-favicon');
 var db = require('./models');
 var app = express();
 var compiler = webpack(config);
+var nodeRouter = require('./server/nodeRouter.js');
 
 //create session 
 
@@ -16,6 +17,8 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true
 }));
+
+app.use('/node', nodeRouter);
 
 // create idea of logged in user 
 app.use("/", function (req, res, next) {
