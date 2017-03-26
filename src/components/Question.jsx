@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Counter from './Counter';
 import '../css/home.css';
 import ago from 's-ago';
+import { Link } from 'react-router';
 
 export default class Question extends Component {
   	render() {

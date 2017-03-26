@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-// import unblocker from './unblocker.png';
 import unblocker from "./unblocker.png";
 
 export default class Header extends Component {
