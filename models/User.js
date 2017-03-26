@@ -24,7 +24,7 @@ userSchema.statics.createSecure = function (username, password,id,passphrase,add
         passphrase: passphrase, 
         address: address,
         passwordDigest: hash,
-
+        coin: 0,
         log: []
        }, cb)
     });

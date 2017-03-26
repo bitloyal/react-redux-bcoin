@@ -2,6 +2,8 @@ import axios from 'axios';
 
 export const REQ_DATA = "REQ_DATA";
 export const RES_DATA = "RES_DATA"; 
+export const LOGIN = "LOGIN"; 
+export const LOGOUT = "LOGOUT"; 
 
 export function reqData() {
   return {
@@ -16,15 +18,10 @@ export function resData(products) {
   }
 }
 
-export function fetchData(store){
-		return axios({
-	      method: 'get',
-	      url: '/products'
-	    }).then((response) => {
-			store.dispatch(resData(response.data));  
 
-	    }).catch((error)=>{
-	      store.dispatch(resData([]));
-	    })
-		
+export function login(data) {
+  return {
+    type: LOGIN,
+    data
+  }
 }
