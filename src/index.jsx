@@ -18,6 +18,7 @@ import Questions from './components/Questions';
 import Answer from './components/Answer';
 
 import QuestionsContainer from './containers/QuestionsContainer.jsx';
+import AnswerContainer from './containers/AnswerContainer.jsx';
 
 // Create the store 
 const store = createStore(
@@ -40,7 +41,7 @@ ReactDOM.render((
 				<Route path="/signup" pageId="Signup" component={SignUp}/>
 				<Route path="/bcoin" pageId="Bcoin" component={AppBcoin}/>
 				<Route path="/questions" pageId="Questions" component={QuestionsContainer}/>
-				<Route path="/answer" pageId="Answer" component={Answer}/>
+				<Route path="/answer" pageId="Answer" component={AnswerContainer}/>
 			</Route>
 		</Router>
 	</Provider>), document.getElementById('root'));

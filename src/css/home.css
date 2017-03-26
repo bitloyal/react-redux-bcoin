@@ -2,6 +2,16 @@
 	padding-top: 60px;
 }
 
+.question-title {
+	font-size: 24px;
+	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
+}
+
+.answer-title {
+	font-size: 18px;
+	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";	
+}
+
 .header {
 	display: flex;
 	flex-direction: row;
@@ -19,6 +29,51 @@
 	box-sizing: border-box;
 	border-top: 3px solid #F48024;
 	box-shadow: 0 1px 0 rgba(12,13,14,0.15);
+}
+
+.arrows, .qarrows {
+	display: inline-block;
+	width: 60px;
+	height: 100%;
+}
+
+.qarrows {
+	position: relative;
+	top: -700px;
+}
+
+.arrows {
+	position: relative;
+	top: -589px;
+}
+
+.arrow-up, .arrow-down, .accept {
+	width: 30px;
+	display: block;
+	margin: 0 auto 5px auto;
+	cursor: pointer;
+}
+
+.avotes, .qvotes {
+	font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
+	width: 30px;
+	display: block;
+	margin: 0 auto 5px auto;
+	text-align: center;
+	color: #6a737c;
+	font-size: 20px;
+}
+
+.arrow-down {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+.fake-qa {
+	display: inline-block;
+	width: 728px;
 }
 
 .unblocker-title {
@@ -173,6 +228,14 @@
 	margin: auto;
 }
 
+.qa-container {
+	width: 800px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
 .form-title {
 	color: #07C;
 	text-align: center;
@@ -242,9 +305,5 @@ input:-webkit-autofill {
 	padding: 8px 5px;
 	line-height: 1;
 	display: inline-block;
-}
-
-.arrow:hover{
-	background: orange;
 }
 
