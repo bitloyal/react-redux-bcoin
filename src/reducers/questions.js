@@ -71,8 +71,10 @@ const questions = (state = initialState, action) => {
 			console.log('state:');
 			console.log(state);
 			return Object.assign({}, state, {
-				state: {avotes},
-				questions: state.questions
+				state: {
+					avotes,
+					questions: state.questions
+				}
 			});
 		case 'CLICK_DOWN':
 			avotes--;
@@ -81,8 +83,10 @@ const questions = (state = initialState, action) => {
 			console.log(state);
 			console.log(state);
 			return Object.assign({}, state, {
-				state: {avotes},
-				questions: state.questions
+				state: {
+					avotes,
+					questions: state.questions
+				}
 			});
 		default:
 			return state;
