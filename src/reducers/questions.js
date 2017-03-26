@@ -74,8 +74,7 @@ const questions = (state = initialState, action) => {
 			return Object.assign({}, state, {
 					avotes,
 					questions: state.questions
-				}
-			});
+				});
 		default:
 			return state;
 	}
