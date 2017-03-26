@@ -15,7 +15,8 @@ const makeFormItems = formProps => (
 );
 
 const AppBcoin = () => (
-  <div className="container" role="main">
+  <div className="container bcoin" role="main">
+
   	<NavBar appName="NOT Bcoin Boilerplate" />
     { forms.map(makeFormItems) }
   </div>
