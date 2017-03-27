@@ -2,7 +2,7 @@
 
 This is a bounty app that pays in bitcoin which is designed to help people who have become blocked on a project they're working on.  It could be useful for a variety of digital media work -- graphic design, copy creation or web development, for example.
 
-The motivation for building such a system with bitcoin derives from the cryptocurrency's globally consistent value.  Without a consistent global value for the work, international collaboration tends to be defined more by currency value differences than quality of work.  Those currency differences are of course an excellent opportunity the people of India and Africa, but it also tends to lock out contributors from established tech hubs.
+The motivation for building such a system with bitcoin derives from the cryptocurrency's globally consistent value.  Without a consistent global value for the work, international collaboration tends to be defined more by currency value differences than quality of work.  Those currency differences are of course an excellent opportunity for the people of India and Africa, but it also tends to lock out contributors from established tech hubs.
 
 A bitcoin-based bounty app for unblocking projects could potentially highlight the benefits of having a single global currency for some types of work.
 
@@ -52,4 +52,4 @@ This app was first created as part of the bcoin hackathon at San Francisco's Hac
 
 The state of the app by the end of the hackathon included a rudimentary frontend (entirely copied from Stack Overflow), an ability to log in users, and an ability to associate those users with a bitcoin wallet address (which could then be seeded with bitcoin from a public faucet).
 
-The app is built on React/Redux, but significant refactoring is needed in order to clean up the code and replace mocked/rushed functionality/design.
+The app is built on React/Redux with a MongoDB backend and of course using the bcoin API.  However, significant refactoring is needed in order to clean up the code and replace mocked/rushed functionality/design.
