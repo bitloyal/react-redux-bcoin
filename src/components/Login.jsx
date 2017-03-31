@@ -1,34 +1,22 @@
 import React, { Component } from 'react';
-import {login, logout} from '../utils/routes.jsx'; 
+import {logout} from '../utils/routes.jsx'; 
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 
-const mapStateToProps = (state) => {
-  return {
-    state
-  };
-}; 
-
-class Log extends Component {
+class Login extends Component {
   	
   	constructor(props){
   		super(props); 
   	    this.handleSubmit = this.handleSubmit.bind(this); 
         this.logout = this.logout.bind(this);
-        this.checkLogin = this.checkLogin.bind(this);
-        this.state = {loggedIn : this.props.loggedIn, logMessage: '', username: this.props.username, message: null}
-
   	}
 
   	handleSubmit(e){
   		e.preventDefault(); 
-
       var username = document.getElementsByName('username')[0];
       var password = document.getElementsByName('password')[0];
-      var thisLogin = login.bind(this); 
       
-      thisLogin(username.value,password.value); 
-        
+      this.props.loginRoute(username.value,password.value)
   		username.value = ""; 
   		password.value = ""; 
   	}
@@ -39,15 +27,9 @@ class Log extends Component {
         this.props.clearState(); 
     }
 
-    checkLogin(){
-        if(this.props.login !== false){
-          var login = document.getElementsByName('login')[0].className +=  "login";
-          var signup = document.getElementsByName('signup')[0].className += "login";
-        }
-    }
-
   	render() {
-      if(!this.props.state.login){
+      debugger;
+      if(!this.props.login.login){
         return (  
         <div className="form-container-login">
         <div className="form-title">Log In</div>
@@ -56,13 +38,13 @@ class Log extends Component {
             <input className="input" type="password" placeholder="password" name="password" />
             <input className="submit" type="submit" placeholder="submit"/>
           </form>
-          <div className="flag">{this.state.message}</div>
+          <div className="flag">{this.props.login.message}</div>
          </div>
     );    
       }else{
         return (
           <div> 
-            <h3> Hello {this.props.username}! Login Successful!</h3>
+            <h3> Hello {this.props.login.username}! Login Successful!</h3>
             <button onClick={this.logout}> Click Here to log out </button>
           </div>
 
@@ -71,12 +53,6 @@ class Log extends Component {
   }
 }
 
-const Login = connect(
-  mapStateToProps,
-  null
-)(Log);
-
-export default Login;
-
+export default Login
 
 
