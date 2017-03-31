@@ -343,4 +343,6 @@ input:-webkit-autofill {
 	line-height: 1;
 	display: inline-block;
 }
-
+.flag{
+	color: red;
+}

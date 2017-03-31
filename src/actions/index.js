@@ -36,45 +36,59 @@ export function decrement(question) {
 	}
 }
 
-// export function login(data) {
-//   return {
-//     type: LOGIN,
-//     data
-//   }
-// }
-
-  export const loginRoute = (username, password)=> (dispatch, getState)=>{
-      return axios({
-        method: 'post',
-        url: '/login',
-        data: {
-          'username': username,
-          'password': password
+export const loginRoute = (username, password)=> (dispatch, getState)=>{
+    return axios({
+      method: 'post',
+      url: '/login',
+      data: {
+        'username': username,
+        'password': password
+      }
+    }).then((response)=>{
+        if(response.data === "no username in database"){
+          dispatch({ 
+            type: 'ERROR',
+            data:response 
+          });      
+        }else if(response.data ==="incorrect password"){
+          dispatch({ 
+            type: 'ERROR',
+            data:response 
+          });      
+        }else{
+          dispatch({ 
+            type: 'LOGIN',
+            data:response 
+          });      
         }
-      }).then((response)=>{
-          if(response.data === "no username in database"){
-            // send action to update state, no username in database
-            return{
-              type: "ERROR",
-              response
-            };
-          }else if(response.data ==="incorrect password"){
-            return{
-              type: "ERROR",
-              response
-            };
-          }else{
-            
-            dispatch({ 
-              type: 'LOGIN',
-              data:response 
-            });      
-          }
-      }).catch((error)=>{
-        
-        return{
-          type: "ERROR",
-          response: error
-        };
-      });
-  }
+    }).catch((error)=>{
+      return{
+        type: "ERROR",
+        response: error
+      };
+    });
+}
+
+export const logoutRoute = () =>(dispatch, getState) => {
+  return axios({
+    method: 'get',
+    url: '/logout'
+  }).then((response)=>{
+      dispatch({ 
+          type: 'LOGOUT',
+          data:response 
+        });      
+  }).catch((error)=>{
+      dispatch({ 
+          type: 'LOGOUT',
+          data:error
+      });      
+    })
+}
+  
+
+
+
+
+
+

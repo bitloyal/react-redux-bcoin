@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login.jsx';
-import {loginRoute} from '../actions';
+import {loginRoute,logoutRoute} from '../actions';
 import {bindActionCreators} from 'redux';
 
 const mapStateToProps = (state) => {
@@ -14,6 +14,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		loginRoute: (username,password) => {
 		 	dispatch(loginRoute(username,password));
+		},
+		logoutRoute: (username,password) => {
+		 	dispatch(logoutRoute());
 		},
 		dispatch
 	}
