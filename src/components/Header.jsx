@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
   };
 }; 
 
-
 class Head extends Component {
 
   constructor(props){
@@ -27,9 +26,6 @@ class Head extends Component {
     }
     
   	render() {
-      var imgStyles = {
-        
-      }
     	return (	
         	<div className="header">
         		<img className="unblocker-title" src={unblocker} />
