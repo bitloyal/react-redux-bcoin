@@ -22,7 +22,7 @@ class Login extends Component {
   	}
 
     logout(){
-        this.props.logoutRoute();
+        this.props.logoutRoute(); 
     }
 
   	render() {

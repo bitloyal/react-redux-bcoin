@@ -16,7 +16,6 @@ class Head extends Component {
   constructor(props){
       super(props); 
       this.processCoins = this.processCoins.bind(this);
-
     }
 
     processCoins(coins){
@@ -25,14 +24,12 @@ class Head extends Component {
       }else{
         return parseFloat(0).toFixed(2); 
       }
-      
     }
     
   	render() {
       var imgStyles = {
         
       }
-      console.log("props from redux ", this.props);
     	return (	
         	<div className="header">
         		<img className="unblocker-title" src={unblocker} />
