@@ -6,8 +6,6 @@ import { Link } from 'react-router';
 
 export default class Question extends Component {
   	render() {
-  		console.log(this.props.votes);
-
     	return (	
         	<div className="question">
         		<div className="counters">

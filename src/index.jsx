@@ -4,10 +4,11 @@ import { Router, IndexRoute, Route, browserHistory } from 'react-router';
 import { fetchData } from './actions'; 
 
 //Redux 
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from 'Reducers';
 import { syncHistoryWithStore } from 'react-router-redux';	
+import thunk from 'redux-thunk';
 
 //components 
 import App from 'App';
@@ -19,17 +20,23 @@ import Answer from './components/Answer';
 
 import QuestionsContainer from './containers/QuestionsContainer.jsx';
 import AnswerContainer from './containers/AnswerContainer.jsx';
+import LoginContainer from './containers/LoginContainer.jsx';
 
 const initialState = {
-	login: false
+	login: false,
+	username: ""
 }
 	
 // Create the store 
 const store = createStore(
-	reducers, 
-	initialState,
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+	reducers,
+	applyMiddleware(thunk)
+	);
+	// initialState,
+	// compose(
+	// 	applyMiddleware(thunk),
+	// 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//	);
 
 // stuff from bcoin implementation 
 import AppBcoin from './containers/AppBcoin';
@@ -42,7 +49,7 @@ ReactDOM.render((
 		<Router history={history}>
 			<Route path="/" pageId="wrapper" component={Wrapper}>
 				<IndexRoute pageId="index" component={App}/>
-				<Route path="/login" pageId="Login" component={Login}/>
+				<Route path="/login" pageId="LoginContainer" component={LoginContainer}/>
 				<Route path="/signup" pageId="Signup" component={SignUp}/>
 				<Route path="/bcoin" pageId="Bcoin" component={AppBcoin}/>
 				<Route path="/questions" pageId="Questions" component={QuestionsContainer}/>

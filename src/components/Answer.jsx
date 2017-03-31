@@ -8,8 +8,6 @@ import star from './star.png';
 export default class Answer extends Component {
 
   	render() {
-  		console.log(this.props);
-  		console.log(this.props.questions.avotes);
 	    return (
 	    	<div>
 	    		<div className="qa-container">

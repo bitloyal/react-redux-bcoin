@@ -6,6 +6,6 @@ var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/store");
 
 module.exports.User = require("./User");
-module.exports.Product = require("./Product");
+
 
 
