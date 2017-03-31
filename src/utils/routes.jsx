@@ -70,20 +70,3 @@ export function getSession(){
   }) 
 }
 
-export function logout(){
-    return axios({
-      method: 'get',
-      url: '/logout'
-    }).then((response)=>{
-        this.setState({
-          loggedIn: false,
-          message: '',
-          logMessage: "Successfully Logged Out!"
-        });
-    }).catch((error)=>{
-        this.setState({
-          logMessage: "A System Error Occured"
-        })
-    })
-}
-  

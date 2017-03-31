@@ -7,8 +7,8 @@ class Login extends Component {
   	
   	constructor(props){
   		super(props); 
-  	    this.handleSubmit = this.handleSubmit.bind(this); 
-        this.logout = this.logout.bind(this);
+  	    this.handleSubmit = this.handleSubmit.bind(this);
+        this.logout = this.logout.bind(this); 
   	}
 
   	handleSubmit(e){
@@ -22,13 +22,10 @@ class Login extends Component {
   	}
 
     logout(){
-        var thisLogout = logout.bind(this); 
-        thisLogout();
-        this.props.clearState(); 
+        this.props.logoutRoute();
     }
 
   	render() {
-      debugger;
       if(!this.props.login.login){
         return (  
         <div className="form-container-login">
@@ -43,7 +40,7 @@ class Login extends Component {
     );    
       }else{
         return (
-          <div> 
+          <div className="form-container-login">
             <h3> Hello {this.props.login.username}! Login Successful!</h3>
             <button onClick={this.logout}> Click Here to log out </button>
           </div>
